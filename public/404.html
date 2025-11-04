@@ -4,11 +4,12 @@
   <meta charset="utf-8">
   <title>Redirecting...</title>
   <script>
-    // Get the current path excluding the base path
-    const segment = window.location.pathname.replace(/^\/companyWebsite\/?/, '');
-    
-    // Redirect to the main app with hash-based routing
-    window.location.replace(`/companyWebsite/#/${segment}`);
+    // Redirect unknown paths to the HashRouter entry point
+    // Preserve path, query, and hash. Example: /about -> /#/about
+    const path = window.location.pathname.replace(/^\//, '');
+    const query = window.location.search || '';
+    const hash = window.location.hash || '';
+    window.location.replace(`/#/${path}${query}${hash}`);
   </script>
 </head>
 <body>
