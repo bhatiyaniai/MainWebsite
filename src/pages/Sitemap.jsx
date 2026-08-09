@@ -41,11 +41,6 @@ const Sitemap = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="tel:+917325849545" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                      +91 7325849545
-                    </a>
-                  </li>
-                  <li>
                     <a href="tel:+919845043204" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                       +91 9845043204
                     </a>
@@ -56,8 +51,8 @@ const Sitemap = () => {
               <div>
                 <h3 className="text-lg font-semibold mb-2 text-primary-600 dark:text-primary-400">Email</h3>
                 <p className="text-secondary-700 dark:text-secondary-300">
-                  <a href="mailto:adhipsarda@bhatiyaniai.com" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                    adhipsarda@bhatiyaniai.com
+                  <a href="mailto:support@bhatiyaniai.com" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                    support@bhatiyaniai.com
                   </a>
                 </p>
               </div>

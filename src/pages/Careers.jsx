@@ -61,8 +61,8 @@ const Careers = () => {
           
           <div className="mt-8 text-center">
             <p className="text-secondary-600 dark:text-secondary-300 mb-2">For general inquiries about careers at Bhatiyani Astute Intelligence:</p>
-            <a href="mailto:adhipsarda@bhatiyaniai.com" className="text-primary-600 dark:text-primary-400 font-medium text-lg hover:underline">
-              adhipsarda@bhatiyaniai.com
+            <a href="mailto:support@bhatiyaniai.com" className="text-primary-600 dark:text-primary-400 font-medium text-lg hover:underline">
+              support@bhatiyaniai.com
             </a>
           </div>
         </div>
@@ -119,8 +119,8 @@ const Careers = () => {
             We're always looking for talented individuals who are passionate about AI and computer vision technology. 
             If you're interested in joining our team, please send your resume to:
           </p>
-          <a href="mailto:adhipsarda@bhatiyaniai.com" className="text-primary-600 dark:text-primary-400 font-medium text-xl hover:underline">
-            adhipsarda@bhatiyaniai.com
+          <a href="mailto:support@bhatiyaniai.com" className="text-primary-600 dark:text-primary-400 font-medium text-xl hover:underline">
+            support@bhatiyaniai.com
           </a>
         </div>
       </div>

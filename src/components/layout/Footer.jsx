@@ -76,7 +76,7 @@ const Footer = () => {
             <div className="mt-6">
               <h4 className="text-white font-medium mb-3">Contact Us</h4>
               <p className="text-secondary-300 mb-2">
-                # 23, 1st Floor, 5th Cross, Ghandinagar,
+                # 23, 1st Floor, 5th Cross, Gandhinagar,
                 <br />
                 Bengaluru, Karnataka, India 560009
               </p>
@@ -85,17 +85,13 @@ const Footer = () => {
                   +91 9480603623
                 </a>
                 <br />
-                <a href="tel:+917325849545" className="hover:text-primary-400 transition-colors">
-                  +91 7325849545
-                </a>
-                <br />
                 <a href="tel:+919845043204" className="hover:text-primary-400 transition-colors">
                   +91 9845043204
                 </a>
               </p>
               <p className="text-secondary-300">
-                <a href="mailto:adhipsarda@bhatiyaniai.com" className="hover:text-primary-400 transition-colors">
-                  adhipsarda@bhatiyaniai.com
+                <a href="mailto:support@bhatiyaniai.com" className="hover:text-primary-400 transition-colors">
+                  support@bhatiyaniai.com
                 </a>
               </p>
             </div>

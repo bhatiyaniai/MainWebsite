@@ -47,7 +47,7 @@ const services = [
   {
     id: 5,
     title: 'Docking Management System',
-    description: 'Creating an efficient communication system between the dock/dispatch team & transport team.',
+    description: 'Creating an efficient communication system between the dock/dispatch team and the transport team.',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
@@ -100,7 +100,7 @@ const additionalServices = [
   {
     id: 4,
     title: 'Robotics Solutions',
-    description: 'Robotics to reduce ergonomic issues in workplaces.',
+    description: 'Robotics to reduce ergonomic issues in the workplace.',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

@@ -15,7 +15,7 @@ const teamMembers = [
     bio: 'Founder & CTO blending robotics, AI, and manufacturing expertise to drive industrial innovation. Focused on scalable, real-world automation solutions.',
     image: adhipImg,
     linkedin: 'https://www.linkedin.com/in/adhipsarda26/',
-    email: 'adhipsarda@bhatiyaniai.com'
+    email: 'support@bhatiyaniai.com'
   },
   {
     id: 2,

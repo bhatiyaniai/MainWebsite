@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/animations';
+import deepLearningImg from '../assets/deep_learning_vision.png';
 
 // Blog categories with their descriptions
 const blogCategories = [
@@ -60,7 +61,7 @@ const samplePosts = [
     excerpt: 'A comprehensive overview of the latest deep learning architectures used in computer vision applications.',
     category: 'ai-ml',
     date: 'May 15, 2023',
-    image: 'https://images.unsplash.com/photo-1597589827317-4c6d6e0a90f1?q=80&w=300&auto=format&fit=crop',
+    image: deepLearningImg,
   },
   {
     id: 2,

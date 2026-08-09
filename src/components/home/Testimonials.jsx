@@ -69,6 +69,21 @@ const testimonials = [
     project: "Complete warehouse automation",
     duration: "12 months full deployment",
     roi: "350% return on investment"
+  },
+  {
+    id: 7,
+    content: "inventory counting, Vehicle's genuinity check using fast tag and other warehouse management services using AI on CCTV",
+    companyName: "Supreme Industries Limited"
+  },
+  {
+    id: 8,
+    content: "inventory & stock automation, Vehicle's genuinity check using fast tag.",
+    companyName: "Colorflex Global Private Limited"
+  },
+  {
+    id: 9,
+    content: "ocr services, attendance management using Artificial Intelligence.",
+    companyName: "Jain Group of Institutions"
   }
 ];
 
@@ -129,22 +144,30 @@ const Testimonials = () => {
                   "{testimonial.content}"
                 </blockquote>
                 
-                <div className="bg-white/10 rounded-lg p-4 max-w-2xl mx-auto">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-                    <div>
-                      <span className="text-primary-200 block">Project:</span>
-                      <p className="text-white font-medium">{testimonial.project}</p>
-                    </div>
-                    <div>
-                      <span className="text-primary-200 block">Duration:</span>
-                      <p className="text-white font-medium">{testimonial.duration}</p>
-                    </div>
-                    <div>
-                      <span className="text-primary-200 block">ROI:</span>
-                      <p className="text-white font-medium">{testimonial.roi}</p>
+                {(testimonial.project || testimonial.duration || testimonial.roi) && (
+                  <div className="bg-white/10 rounded-lg p-4 max-w-2xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                      {testimonial.project && (
+                        <div>
+                          <span className="text-primary-200 block">Project:</span>
+                          <p className="text-white font-medium">{testimonial.project}</p>
+                        </div>
+                      )}
+                      {testimonial.duration && (
+                        <div>
+                          <span className="text-primary-200 block">Duration:</span>
+                          <p className="text-white font-medium">{testimonial.duration}</p>
+                        </div>
+                      )}
+                      {testimonial.roi && (
+                        <div>
+                          <span className="text-primary-200 block">ROI:</span>
+                          <p className="text-white font-medium">{testimonial.roi}</p>
+                        </div>
+                      )}
                     </div>
                   </div>
-                </div>
+                )}
               </motion.div>
             ))}
           </div>
@@ -191,6 +214,15 @@ const Testimonials = () => {
             </div>
             <div className="h-12 bg-white/10 rounded-lg flex items-center justify-center px-6 w-full">
               <div className="text-white font-bold">Bethala Petrohacks</div>
+            </div>
+            <div className="h-12 bg-white/10 rounded-lg flex items-center justify-center px-6 w-full text-center">
+              <div className="text-white font-bold leading-tight text-sm">Supreme Industries</div>
+            </div>
+            <div className="h-12 bg-white/10 rounded-lg flex items-center justify-center px-6 w-full text-center">
+              <div className="text-white font-bold leading-tight text-sm">Colorflex Global</div>
+            </div>
+            <div className="h-12 bg-white/10 rounded-lg flex items-center justify-center px-6 w-full text-center">
+              <div className="text-white font-bold leading-tight text-sm">Jain Group of Institutions</div>
             </div>
           </div>
         </motion.div>

@@ -22,7 +22,7 @@ const AboutHero = () => {
             <p className="text-lg text-secondary-600 dark:text-secondary-300 mb-8 leading-relaxed">
               We are a technology-driven company specializing in computer vision solutions for warehouse management, 
               industrial monitoring, Robotics and automation, 3D modeling using Artificial Intelligence. 
-              Our expertise lie in developing AI-powered systems that enhance operational efficiency, 
+              Our expertise lies in developing AI-powered systems that enhance operational efficiency, 
               security, and quality control across warehouses, factories, and various industries.
             </p>
           </motion.div>
