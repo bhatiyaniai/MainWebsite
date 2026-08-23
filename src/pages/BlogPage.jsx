@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import SEO from '../components/common/SEO';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/animations';
 
@@ -121,6 +122,11 @@ const BlogPage = () => {
 
   return (
     <div className="pt-32 pb-20 bg-white dark:bg-secondary-950">
+      <SEO 
+        title="Insights & Blog - Bhatiyani Astute Intelligence" 
+        description="Stay updated with the latest insights, trends, and tutorials in Artificial Intelligence and Computer Vision for industrial sectors."
+        path="/resources/blog"
+      />
       <div className="container-custom">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h1 className="text-4xl font-bold mb-4 dark:text-white">Technical Blog</h1>

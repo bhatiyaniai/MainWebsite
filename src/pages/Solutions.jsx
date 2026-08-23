@@ -3,6 +3,7 @@ import SolutionsHero from '../components/solutions/SolutionsHero';
 import CoreServices from '../components/solutions/CoreServices';
 import Benefits from '../components/solutions/Benefits';
 import Industries from '../components/solutions/Industries';
+import SEO from '../components/common/SEO';
 
 const Solutions = () => {
   useEffect(() => {
@@ -11,6 +12,11 @@ const Solutions = () => {
 
   return (
     <div>
+      <SEO 
+        title="AI Solutions - Bhatiyani Astute Intelligence" 
+        description="Explore our robust AI solutions including Heavy Machinery Monitoring, Automatic Number Plate Recognition (ANPR), and Quality Inspection automation."
+        path="/solutions"
+      />
       <SolutionsHero />
       <CoreServices />
       <Benefits />

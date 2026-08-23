@@ -1,4 +1,5 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './context/ThemeContext';
 import { useState, useEffect } from 'react';
 import Layout from './components/layout/Layout';
@@ -34,9 +35,10 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider>
-      {isLoading && <LoadingScreen />}
-      <Router>
+    <HelmetProvider>
+      <ThemeProvider>
+        {isLoading && <LoadingScreen />}
+        <Router>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -160,8 +162,9 @@ function App() {
             } />
           </Route>
         </Routes>
-      </Router>
-    </ThemeProvider>
+        </Router>
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }
 

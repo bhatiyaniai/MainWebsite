@@ -2,9 +2,65 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="vite.svg" />
+    <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Bhatiyani Astute Intelligence provides cutting-edge Computer Vision and AI solutions for industrial automation, real-time insights, and vehicle tracking." />
+    <meta name="keywords" content="Computer Vision, Artificial Intelligence, AI Solutions, Industrial Automation, Vehicle Tracking, Machine Learning, Bhatiyani Astute Intelligence" />
+    <meta name="author" content="Bhatiyani Astute Intelligence" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bhatiyani Astute Intelligence" />
+    <meta property="og:title" content="Bhatiyani Astute Intelligence - Computer Vision & AI Solutions" />
+    <meta property="og:description" content="Cutting-edge Computer Vision and AI solutions for industrial automation and real-time business insights." />
+    <meta property="og:image" content="https://bhatiyaniai.com/logo.png" />
+    <meta property="og:url" content="https://bhatiyaniai.com/" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@bhatiyaniai" />
+    <meta name="twitter:title" content="Bhatiyani Astute Intelligence - Computer Vision & AI Solutions" />
+    <meta name="twitter:description" content="Cutting-edge Computer Vision and AI solutions for industrial automation and real-time business insights." />
+    <meta name="twitter:image" content="https://bhatiyaniai.com/logo.png" />
+
+    <!-- JSON-LD: Organization Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Bhatiyani Astute Intelligence",
+      "url": "https://bhatiyaniai.com",
+      "logo": "https://bhatiyaniai.com/logo.png",
+      "description": "Cutting-edge Computer Vision and AI solutions for industrial automation, real-time insights, and vehicle tracking.",
+      "sameAs": [
+        "https://www.linkedin.com/in/adhipsarda26/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@bhatiyaniai.com",
+        "contactType": "customer support"
+      }
+    }
+    </script>
+
     <title>Bhatiyani Astute Intelligence - Computer Vision & AI Solutions</title>
+
+    <!-- GitHub Pages SPA redirect reader: restores the path encoded by 404.html -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          });
+          window.history.replaceState(
+            null, null,
+            l.pathname.slice(0, -1) + decoded[0] +
+            (decoded[1] ? '?' + decoded[1] : '') +
+            l.hash
+          );
+        }
+      }(window.location))
+    </script>
   </head>
   <body class="bg-white dark:bg-secondary-950">
     <div id="root"></div>

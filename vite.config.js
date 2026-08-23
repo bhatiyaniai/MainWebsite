@@ -6,4 +6,8 @@ export default defineConfig({
   plugins: [react()],
   // Use root base for custom domain (bhatiyaniai.com)
   base: '/',
+  server: {
+    // Serve index.html for all routes in dev mode (SPA fallback)
+    historyApiFallback: true,
+  },
 })
