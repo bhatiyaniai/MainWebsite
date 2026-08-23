@@ -19,15 +19,15 @@ const SectionTitle = ({
       viewport={{ once: true, amount: 0.2 }}
     >
       {subtitle && (
-        <span className={`inline-block text-sm font-semibold uppercase tracking-wider mb-2 ${light ? 'text-primary-300' : 'text-primary-600'}`}>
+        <span className={`inline-block text-sm font-semibold uppercase tracking-wider mb-2 ${light ? 'text-primary-300' : 'text-primary-600 dark:text-primary-400'}`}>
           {subtitle}
         </span>
       )}
-      <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${light ? 'text-white' : 'text-secondary-900'}`}>
+      <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${light ? 'text-white' : 'text-secondary-900 dark:text-white'}`}>
         {title}
       </h2>
       {description && (
-        <p className={`text-lg ${light ? 'text-secondary-300' : 'text-secondary-600'}`}>
+        <p className={`text-lg ${light ? 'text-secondary-300' : 'text-secondary-600 dark:text-secondary-300'}`}>
           {description}
         </p>
       )}

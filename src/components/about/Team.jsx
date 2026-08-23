@@ -1,22 +1,12 @@
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
 import { fadeInUp, staggerContainer } from '../../utils/animations';
-import useScrollAnimation from '../../hooks/useScrollAnimation';
-import adhipImg from '../../assets/adhip.JPG';
+import adhipImg from '../../assets/adhip-upright.JPG';
 import ChandrikaImg from '../../assets/Chandrika.jpg';
 import KishanImg from '../../assets/Kishan.jpg';
 import { Link } from 'react-router-dom';
 
 const teamMembers = [
-  {
-    id: 1,
-    name: 'Adhip Sarda',
-    title: 'Founder & CEO',
-    bio: 'Founder & CTO blending robotics, AI, and manufacturing expertise to drive industrial innovation. Focused on scalable, real-world automation solutions.',
-    image: adhipImg,
-    linkedin: 'https://www.linkedin.com/in/adhipsarda26/',
-    email: 'support@bhatiyaniai.com'
-  },
   {
     id: 2,
     name: 'Chandrika Chhatria',
@@ -25,6 +15,15 @@ const teamMembers = [
     image: ChandrikaImg,
     linkedin: '',
     email: ''
+  },
+  {
+    id: 1,
+    name: 'Adhip Sarda',
+    title: 'Founder & CEO',
+    bio: 'Founder & CTO blending robotics, AI, and manufacturing expertise to drive industrial innovation. Focused on scalable, real-world automation solutions.',
+    image: adhipImg,
+    linkedin: 'https://www.linkedin.com/in/adhipsarda26/',
+    email: 'support@bhatiyaniai.com'
   },
   {
     id: 3,
@@ -38,8 +37,6 @@ const teamMembers = [
 ];
 
 const Team = () => {
-  const [ref, isVisible] = useScrollAnimation(0.1);
-
   return (
     <section className="py-20 bg-white dark:bg-secondary-950">
       <div className="container-custom">
@@ -52,17 +49,15 @@ const Team = () => {
         />
 
         <motion.div
-          ref={ref}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
           variants={staggerContainer}
           initial="hidden"
-          animate={isVisible ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
         >
           {teamMembers.map((member) => (
-            <Link to={`/about/leader/${member.id}`} key={member.id} className="card group">
-              <motion.div
-                variants={fadeInUp}
-              >
+            <motion.div key={member.id} variants={fadeInUp}>
+              <Link to={`/about/leader/${member.id}`} className="card group block h-full">
                 <div className="relative overflow-hidden">
                   <img 
                     src={member.image} 
@@ -79,8 +74,8 @@ const Team = () => {
                 <div className="p-6">
                   <p className="text-secondary-600 dark:text-secondary-300">{member.bio}</p>
                 </div>
-              </motion.div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
         </motion.div>
 

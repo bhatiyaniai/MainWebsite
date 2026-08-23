@@ -80,15 +80,16 @@ const WhyChooseUs = () => {
   const [ref, isVisible] = useScrollAnimation(0.1);
 
   return (
-    <section className="py-20 bg-white dark:bg-secondary-950">
+    <section className="py-24 bg-gradient-to-b from-white to-primary-50/30 dark:from-secondary-950 dark:to-secondary-900">
       <div className="container-custom">
-        <SectionTitle
-          subtitle="Why Choose Us"
-          title="What Sets Us Apart"
-          description="We're committed to excellence in every aspect of our service."
-          centered={true}
-          className="mb-16"
-        />
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-secondary-900 dark:text-white">
+            Built for <span className="text-primary-600">Diverse Industry Needs</span>
+          </h2>
+          <p className="text-xl text-secondary-600 dark:text-secondary-300">
+            Explore how our AI powers product-specific inspection use cases across industries with production-grade vision AI.
+          </p>
+        </div>
 
         <motion.div
           ref={ref}
@@ -100,26 +101,30 @@ const WhyChooseUs = () => {
           {reasons.map((reason) => (
             <motion.div
               key={reason.id}
-              className="p-6 rounded-xl bg-secondary-50 dark:bg-secondary-900 hover:shadow-lg transition-all duration-300"
+              className="card p-8 lg:p-10 flex flex-col group"
               variants={fadeInUp}
             >
-              <div className="text-primary-600 dark:text-primary-400 mb-4">
+              <div className="text-primary-600 dark:text-primary-500 mb-8 transition-transform duration-300 group-hover:-translate-y-1">
                 {reason.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3 dark:text-white">{reason.title}</h3>
-              <p className="text-secondary-600 dark:text-secondary-300">{reason.description}</p>
+              <h3 className="text-2xl font-bold mb-4 dark:text-white leading-tight">{reason.title}</h3>
+              <p className="text-secondary-600 dark:text-secondary-400 leading-relaxed flex-grow mb-8">{reason.description}</p>
+              
+              <div className="mt-auto flex justify-start">
+                <button className="inline-flex items-center gap-3 bg-white dark:bg-secondary-800 text-secondary-900 dark:text-white px-5 py-2 rounded-full font-semibold text-sm shadow-sm border border-secondary-100 dark:border-secondary-700 hover:shadow-md transition-all group-hover:border-primary-200 dark:group-hover:border-primary-900">
+                  Get Solution Guide
+                  <div className="bg-primary-600 text-white p-1.5 rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                </button>
+              </div>
             </motion.div>
           ))}
         </motion.div>
 
-        <div className="mt-16 text-center">
-          <div className="inline-block p-8 bg-primary-50 dark:bg-primary-900/20 rounded-xl">
-            <h3 className="text-2xl font-bold mb-4 text-primary-700 dark:text-primary-300">OUR MOTTO</h3>
-            <p className="text-xl font-medium italic text-secondary-700 dark:text-secondary-300">
-              "YOUR CHALLENGE IS OUR PROGRESS"
-            </p>
-          </div>
-        </div>
+
       </div>
     </section>
   );

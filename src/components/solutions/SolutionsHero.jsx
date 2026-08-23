@@ -46,7 +46,7 @@ const SolutionsHero = () => {
           >
             <div className="relative z-10">
               <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                src="/images/Our Solutions.png" 
                 alt="AI Solutions" 
                 className="rounded-xl shadow-xl w-full h-auto"
               />

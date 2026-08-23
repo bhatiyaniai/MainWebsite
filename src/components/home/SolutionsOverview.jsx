@@ -1,16 +1,15 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
-import { fadeInLeft, fadeInRight } from '../../utils/animations';
+import { fadeInLeft, fadeInRight, fadeInUp } from '../../utils/animations';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
-import qualityImg from '../../assets/quality.jpg';
 
 const solutions = [
   {
     id: 1,
     title: 'Inventory Counting & Management',
     description: 'AI-powered tracking and automation for stock monitoring. Our solution offers real-time visibility and control of your inventory.',
-    image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/images/1ivcm.png',
     link: '/solutions',
     stats: [
       { value: '99%', label: 'Accuracy Rate' },
@@ -22,7 +21,7 @@ const solutions = [
     id: 2,
     title: 'Heavy Machinery Monitoring',
     description: 'Real-time tracking of industrial equipment to ensure operational safety and efficiency. Prevent accidents and optimize usage.',
-    image: 'https://images.unsplash.com/photo-1621905251918-48416bd8575a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/images/Heavy Machinery Monitoring.png',
     link: '/solutions',
     stats: [
       { value: '45%', label: 'Fewer Accidents' },
@@ -34,7 +33,7 @@ const solutions = [
     id: 3,
     title: 'Quality Inspection & Security',
     description: 'Combining AI-driven defect detection and real-time anomaly detection for enhanced security in warehouses and factories.',
-    image: qualityImg,
+    image: '/images/Quality Inspection & Security.png',
     link: '/solutions',
     stats: [
       { value: '95%', label: 'Detection Rate' },
@@ -60,78 +59,88 @@ const SolutionsOverview = () => {
 
         <div ref={ref} className="space-y-24">
           {solutions.map((solution, index) => (
-            <div 
+            <motion.div 
               key={solution.id} 
-              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 items-center`}
+              className="card p-0 overflow-hidden group"
+              variants={fadeInUp}
+              initial="hidden"
+              animate={isVisible ? "visible" : "hidden"}
             >
-              <motion.div 
-                className="w-full lg:w-1/2"
-                variants={index % 2 === 0 ? fadeInLeft : fadeInRight}
-                initial="hidden"
-                animate={isVisible ? "visible" : "hidden"}
-              >
-                <div className="relative rounded-xl overflow-hidden group">
+              <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} h-full`}>
+                
+                {/* Image Side */}
+                <div className="w-full lg:w-5/12 relative h-72 lg:h-auto min-h-[300px] overflow-hidden">
                   <img 
                     src={solution.image} 
                     alt={solution.title} 
-                    className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-secondary-950/80 to-transparent flex items-end">
-                    <div className="p-8 w-full">
-                      <div className="grid grid-cols-3 gap-4 text-white">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent pointer-events-none flex items-end">
+                    <div className="p-6 lg:p-8 w-full">
+                      <div className="grid grid-cols-3 gap-2 lg:gap-4 text-white">
                         {solution.stats.map((stat, i) => (
                           <div key={i} className="text-center">
-                            <div className="text-2xl font-bold text-primary-300">{stat.value}</div>
-                            <div className="text-sm text-secondary-200">{stat.label}</div>
+                            <div className="text-2xl lg:text-3xl font-bold text-primary-400 mb-1">{stat.value}</div>
+                            <div className="text-xs lg:text-sm text-secondary-200">{stat.label}</div>
                           </div>
                         ))}
                       </div>
                     </div>
                   </div>
                 </div>
-              </motion.div>
 
-              <motion.div 
-                className="w-full lg:w-1/2"
-                variants={index % 2 === 0 ? fadeInRight : fadeInLeft}
-                initial="hidden"
-                animate={isVisible ? "visible" : "hidden"}
-              >
-                <h3 className="text-2xl font-bold mb-4 dark:text-white">{solution.title}</h3>
-                <p className="text-secondary-600 dark:text-secondary-300 mb-6 text-lg">{solution.description}</p>
-                
-                <ul className="mb-6 space-y-3">
-                  <li className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-secondary-700 dark:text-secondary-300">Real-time analytics and reporting</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-secondary-700 dark:text-secondary-300">AI-powered decision making</span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-primary-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-secondary-700 dark:text-secondary-300">Seamless integration with existing systems</span>
-                  </li>
-                </ul>
+                {/* Content Side */}
+                <div className="w-full lg:w-7/12 p-8 lg:p-10 flex flex-col">
+                  <h3 className="text-3xl font-bold mb-3 dark:text-white">{solution.title}</h3>
+                  <p className="text-secondary-600 dark:text-secondary-400 mb-6 text-lg leading-relaxed">{solution.description}</p>
+                  
 
-                <Link 
-                  to="/solutions" 
-                  className="btn btn-primary"
-                >
-                  Explore Our Solutions
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </Link>
-              </motion.div>
-            </div>
+                  
+                  {/* Features List */}
+                  <ul className="mb-10 space-y-3">
+                    <li className="flex items-start">
+                      <div className="bg-primary-50 dark:bg-primary-900/20 p-1 rounded-full mr-3 mt-0.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-secondary-700 dark:text-secondary-300 font-medium">Real-time analytics and reporting</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="bg-primary-50 dark:bg-primary-900/20 p-1 rounded-full mr-3 mt-0.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-secondary-700 dark:text-secondary-300 font-medium">AI-powered decision making</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="bg-primary-50 dark:bg-primary-900/20 p-1 rounded-full mr-3 mt-0.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary-600 dark:text-primary-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-secondary-700 dark:text-secondary-300 font-medium">Seamless integration with existing systems</span>
+                    </li>
+                  </ul>
+
+                  {/* Action Button */}
+                  <div className="mt-4">
+                    <Link 
+                      to="/solutions" 
+                      className="inline-flex items-center gap-3 bg-white dark:bg-secondary-800 text-secondary-900 dark:text-white px-6 py-3 rounded-full font-semibold text-sm shadow-sm border border-secondary-100 dark:border-secondary-700 hover:shadow-md transition-all group-hover/btn:border-primary-200 dark:group-hover/btn:border-primary-900"
+                    >
+                      Explore Our Solutions
+                      <div className="bg-primary-600 text-white p-1.5 rounded-full flex items-center justify-center group-hover:bg-primary-500 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
 

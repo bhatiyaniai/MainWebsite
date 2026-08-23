@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
-import { fadeIn } from '../../utils/animations';
+import { fadeIn } from '../../utils/animations'; 
 
 const testimonials = [
   {
     id: 1,
-    content: "Bhatiyani's computer vision solution transformed our inventory management. We've seen 40% cost reduction and 95% accuracy improvement. The automated inventory tracking system was implemented in just one month with a 320% return on investment.",
+    content: "Bhatiyani's computer vision solution transformed our inventory management. We've seen a 40% cost reduction and a 95% accuracy improvement. The automated inventory tracking system was implemented in just one month with a 320% return on investment.",
     author: "Rajesh Kumar",
     position: "Operations Director, Jaguar Petropacks Pvt Ltd",
     companyName: "Jaguar Petropacks Pvt Ltd",
@@ -28,7 +28,7 @@ const testimonials = [
   },
   {
     id: 3,
-    content: "Quality inspection time reduced from 2 hours to 15 minutes per batch. The AI system catches defects our human inspectors missed. The automated quality control implementation has delivered a remarkable 400% return on investment in just two months.",
+    content: "Quality inspection time was reduced from 2 hours to 15 minutes per batch. The AI system catches defects that our human inspectors missed. The automated quality control implementation has delivered a remarkable 400% return on investment in just two months.",
     author: "Vikram Singh",
     position: "Quality Control Head, Triveni Steel",
     companyName: "Triveni Steel",
@@ -39,32 +39,15 @@ const testimonials = [
   },
   {
     id: 4,
-    content: "The security system with theft detection has eliminated all inventory shrinkage. It pays for itself monthly. The AI-powered security monitoring and diamond detection implementation has provided us with a 250% return on investment.",
-    author: "Ananya Patel",
-    position: "Security Director, Krishna Diamond & Jewelry",
-    companyName: "Krishna Diamond & Jewelry",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=120&q=80",
-    project: "AI-powered security monitoring, diamond detection",
-    duration: "3 months implementation",
-    roi: "250% return on investment"
-  },
-  {
-    id: 5,
-    content: "Dock management efficiency improved by 60%. Trucks are processed faster, and communication errors are eliminated. The diamond counting and 3D reconstruction implementation has proven to be an excellent investment.",
-    author: "Rahul Verma",
-    position: "Operations Manager, Vijay Gems",
-    companyName: "Vijay Gems",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=120&q=80",
-    project: "Diamond counting, 3D reconstruction",
-    duration: "3 months implementation",
-    roi: "190% return on investment"
+    content: "Customer management services using AI on CCTV, automated diamond counting, and pilferage checks.",
+    companyName: "Raj Diamonds"
   },
   {
     id: 6,
-    content: "The comprehensive AI solution covers everything from inventory to security. Best technology investment we've made. Our complete warehouse automation deployment over 12 months delivered an exceptional 350% return on investment.",
+    content: "The comprehensive AI solution covers everything from inventory to security. It is the best technology investment we've made. Our complete warehouse automation deployment over 12 months delivered an exceptional 350% return on investment.",
     author: "Sanjay Reddy",
-    position: "CEO, Bethala Petrohacks Pvt Ltd",
-    companyName: "Bethala Petrohacks Pvt Ltd",
+    position: "CEO, Bethala Petropacks Pvt Ltd",
+    companyName: "Bethala Petropacks Pvt Ltd",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=120&q=80",
     project: "Complete warehouse automation",
     duration: "12 months full deployment",
@@ -72,18 +55,23 @@ const testimonials = [
   },
   {
     id: 7,
-    content: "inventory counting, Vehicle's genuinity check using fast tag and other warehouse management services using AI on CCTV",
+    content: "Inventory counting, vehicle authenticity verification using FASTag, and other warehouse management services utilizing AI on CCTV.",
     companyName: "Supreme Industries Limited"
   },
   {
     id: 8,
-    content: "inventory & stock automation, Vehicle's genuinity check using fast tag.",
+    content: "Inventory and stock automation, along with vehicle authenticity verification using FASTag.",
     companyName: "Colorflex Global Private Limited"
   },
   {
     id: 9,
-    content: "ocr services, attendance management using Artificial Intelligence.",
+    content: "OCR services and attendance management using Artificial Intelligence.",
     companyName: "Jain Group of Institutions"
+  },
+  {
+    id: 10,
+    content: "Raw material tracking, roll and bundle counting, and vehicle authenticity verification using FASTag, AI, ANPR, and pilferage checks.",
+    companyName: "Sipani Fibres Limited"
   }
 ];
 
@@ -99,11 +87,13 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-primary-700 text-white relative overflow-hidden">
+    <section className="py-20 bg-[#3A2A20] dark:bg-secondary-950 text-white relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'white\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/svg%3E")', backgroundSize: '30px 30px' }}></div>
       </div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-600/20 glow-effect"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-600/20 glow-effect"></div>
 
       <div className="container-custom relative z-10">
         <SectionTitle
@@ -117,9 +107,9 @@ const Testimonials = () => {
 
         <div className="max-w-4xl mx-auto relative">
           {/* Large quote mark */}
-          <svg 
-            className="absolute -top-16 -left-16 h-32 w-32 text-white opacity-20" 
-            fill="currentColor" 
+          <svg
+            className="absolute -top-16 -left-16 h-32 w-32 text-white opacity-20"
+            fill="currentColor"
             viewBox="0 0 32 32"
           >
             <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
@@ -137,15 +127,15 @@ const Testimonials = () => {
                 transition={{ duration: 0.5 }}
               >
                 <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-white">{testimonial.companyName}</h3>
+                  <h3 className="text-3xl font-bold gradient-text">{testimonial.companyName}</h3>
                 </div>
 
                 <blockquote className="text-xl md:text-2xl leading-relaxed mb-8 text-center">
                   "{testimonial.content}"
                 </blockquote>
-                
+
                 {(testimonial.project || testimonial.duration || testimonial.roi) && (
-                  <div className="bg-white/10 rounded-lg p-4 max-w-2xl mx-auto">
+                  <div className="glass-panel rounded-2xl p-6 max-w-2xl mx-auto border-white/10">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                       {testimonial.project && (
                         <div>
@@ -177,9 +167,8 @@ const Testimonials = () => {
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                className={`w-3 h-3 rounded-full mx-1 focus:outline-none transition-colors duration-300 ${
-                  active === index ? 'bg-white' : 'bg-white/30 hover:bg-white/50'
-                }`}
+                className={`w-3 h-3 rounded-full mx-1 focus:outline-none transition-colors duration-300 ${active === index ? 'bg-white' : 'bg-white/30 hover:bg-white/50'
+                  }`}
                 onClick={() => setActive(index)}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -188,7 +177,7 @@ const Testimonials = () => {
         </div>
 
         {/* Company logos */}
-        <motion.div 
+        <motion.div
           className="mt-20"
           variants={fadeIn}
           initial="hidden"
@@ -206,14 +195,11 @@ const Testimonials = () => {
             <div className="h-12 bg-white/10 rounded-lg flex items-center justify-center px-6 w-full">
               <div className="text-white font-bold">Triveni Steel</div>
             </div>
-            <div className="h-12 bg-white/10 rounded-lg flex items-center justify-center px-6 w-full">
-              <div className="text-white font-bold">Krishna Diamond</div>
+            <div className="h-12 bg-white/10 rounded-lg flex items-center justify-center px-6 w-full text-center">
+              <div className="text-white font-bold leading-tight text-sm">Raj Diamonds</div>
             </div>
             <div className="h-12 bg-white/10 rounded-lg flex items-center justify-center px-6 w-full">
-              <div className="text-white font-bold">Vijay Gems</div>
-            </div>
-            <div className="h-12 bg-white/10 rounded-lg flex items-center justify-center px-6 w-full">
-              <div className="text-white font-bold">Bethala Petrohacks</div>
+              <div className="text-white font-bold">Bethala Petropacks</div>
             </div>
             <div className="h-12 bg-white/10 rounded-lg flex items-center justify-center px-6 w-full text-center">
               <div className="text-white font-bold leading-tight text-sm">Supreme Industries</div>
@@ -223,6 +209,9 @@ const Testimonials = () => {
             </div>
             <div className="h-12 bg-white/10 rounded-lg flex items-center justify-center px-6 w-full text-center">
               <div className="text-white font-bold leading-tight text-sm">Jain Group of Institutions</div>
+            </div>
+            <div className="h-12 bg-white/10 rounded-lg flex items-center justify-center px-6 w-full text-center">
+              <div className="text-white font-bold leading-tight text-sm">Sipani Fibres Limited</div>
             </div>
           </div>
         </motion.div>

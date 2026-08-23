@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { fadeInUp, staggerContainer } from '../../utils/animations';
+import { fadeInUp, staggerContainer, fadeInLeft } from '../../utils/animations';
 import SectionTitle from '../common/SectionTitle';
-import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const services = [
   {
@@ -110,69 +109,86 @@ const additionalServices = [
 ];
 
 const CoreServices = () => {
-  const [mainRef, mainIsVisible] = useScrollAnimation(0.1);
-  const [additionalRef, additionalIsVisible] = useScrollAnimation(0.1);
-
   return (
-    <section className="py-20 bg-white dark:bg-secondary-950">
+    <section className="py-24 bg-[#3A2A20] dark:bg-secondary-950 text-white">
       <div className="container-custom">
-        <SectionTitle
-          subtitle="Core Services"
-          title="Our AI-Powered Solutions"
-          description="We leverage onsite edge devices, drones, and cloud infrastructure to provide real-time insights and automation for businesses."
-          centered={true}
-          className="mb-16"
-        />
-
-        <motion.div
-          ref={mainRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={staggerContainer}
-          initial="hidden"
-          animate={mainIsVisible ? "visible" : "hidden"}
-        >
-          {services.map((service) => (
-            <motion.div
-              key={service.id}
-              className="p-6 rounded-xl bg-secondary-50 dark:bg-secondary-900 hover:shadow-lg transition-all duration-300"
-              variants={fadeInUp}
+        
+        {/* Core Services Split Layout */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+          
+          {/* Left Column - Sticky Heading */}
+          <div className="lg:w-1/3 lg:sticky lg:top-32 h-fit self-start relative z-10">
+            <motion.div 
+              variants={fadeInLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
             >
-              <div className="text-primary-600 dark:text-primary-400 mb-4">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-3 dark:text-white">{service.title}</h3>
-              <p className="text-secondary-600 dark:text-secondary-300">{service.description}</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
+                Engineered For <br className="hidden lg:block" />
+                <span className="text-primary-500">Accuracy, Flexibility, and Speed</span>
+              </h2>
+              <p className="text-lg text-secondary-300 mb-8">
+                We leverage onsite edge devices, drones, and cloud infrastructure to provide real-time insights and automation for businesses.
+              </p>
             </motion.div>
-          ))}
-        </motion.div>
+          </div>
 
-        <div className="mt-24">
-          <SectionTitle
-            subtitle="Additional Services"
-            title="Beyond AI & Computer Vision"
-            description="We also offer additional technology services to support your business goals."
-            centered={true}
-            className="mb-16"
-          />
+          {/* Right Column - Cards Grid */}
+          <div className="lg:w-2/3">
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.1 }}
+            >
+              {services.map((service) => (
+                <motion.div
+                  key={service.id}
+                  className="bg-white/5 dark:bg-black/40 backdrop-blur-sm rounded-[2rem] p-8 lg:p-10 border border-white/10 hover:border-primary-500/50 hover:bg-white/10 dark:hover:bg-black/60 transition-all duration-300 group hover:-translate-y-2 shadow-lg hover:shadow-primary-500/20"
+                  variants={fadeInUp}
+                >
+                  <div className="text-secondary-400 group-hover:text-primary-500 transition-colors duration-300 mb-8 w-14 h-14 flex items-center justify-center rounded-2xl bg-white/5">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-white">{service.title}</h3>
+                  <p className="text-secondary-400">{service.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Additional Services Section */}
+        <div className="mt-32 pt-20 border-t border-white/10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+              Beyond <span className="text-primary-500">AI & Computer Vision</span>
+            </h2>
+            <p className="text-secondary-300 text-lg">
+              We also offer additional technology services to support your business goals with the same commitment to quality.
+            </p>
+          </div>
 
           <motion.div
-            ref={additionalRef}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
             variants={staggerContainer}
             initial="hidden"
-            animate={additionalIsVisible ? "visible" : "hidden"}
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
           >
             {additionalServices.map((service) => (
               <motion.div
                 key={service.id}
-                className="p-6 rounded-xl bg-secondary-50 dark:bg-secondary-900 hover:shadow-lg transition-all duration-300"
+                className="bg-white/5 dark:bg-black/40 backdrop-blur-sm rounded-3xl p-8 border border-white/10 hover:border-primary-500/50 hover:bg-white/10 dark:hover:bg-black/60 transition-all duration-300 group hover:-translate-y-2 shadow-lg hover:shadow-primary-500/20"
                 variants={fadeInUp}
               >
-                <div className="text-accent-500 dark:text-accent-400 mb-4">
+                <div className="text-secondary-400 group-hover:text-primary-500 mb-6 w-12 h-12">
                   {service.icon}
                 </div>
-                <h3 className="text-lg font-bold mb-3 dark:text-white">{service.title}</h3>
-                <p className="text-secondary-600 dark:text-secondary-300">{service.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
+                <p className="text-secondary-400 text-sm">{service.description}</p>
               </motion.div>
             ))}
           </motion.div>

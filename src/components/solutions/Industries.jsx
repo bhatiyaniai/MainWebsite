@@ -93,7 +93,7 @@ const industries = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
-    bgClass: 'from-gray-600 to-gray-400'
+    // bgClass removed for standardization
   }
 ];
 
@@ -121,18 +121,14 @@ const Industries = () => {
           {industries.map((industry) => (
             <motion.div
               key={industry.id}
-              className="rounded-xl overflow-hidden shadow-lg h-full flex flex-col"
+              className="card p-8 flex flex-col h-full group"
               variants={fadeInUp}
             >
-              <div className={`bg-gradient-to-r ${industry.bgClass} p-6 text-white`}>
-                <div className="mb-4">
-                  {industry.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-2">{industry.name}</h3>
+              <div className="text-primary-500 dark:text-primary-500 mb-6 w-12 h-12 transition-transform duration-300 group-hover:-translate-y-1">
+                {industry.icon}
               </div>
-              <div className="p-6 bg-white dark:bg-secondary-900 flex-grow">
-                <p className="text-secondary-600 dark:text-secondary-300">{industry.description}</p>
-              </div>
+              <h3 className="text-xl font-bold mb-3 text-secondary-900 dark:text-white">{industry.name}</h3>
+              <p className="text-secondary-600 dark:text-secondary-400 flex-grow">{industry.description}</p>
             </motion.div>
           ))}
         </motion.div>

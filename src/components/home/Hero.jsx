@@ -31,6 +31,10 @@ const Hero = () => {
         </video>
       </div>
 
+      {/* Background Glows */}
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary-500/30 glow-effect"></div>
+      <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent-500/30 glow-effect"></div>
+
       {/* Hero Content */}
       <div className="container-custom relative z-20 mt-20">
         <div className="max-w-3xl">
@@ -39,8 +43,9 @@ const Hero = () => {
             animate={{ opacity: loaded ? 1 : 0, y: loaded ? 0 : 20 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              Transforming the World with <span className="text-primary-400">Computer Vision</span> & <span className="text-accent-400">AI</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 tracking-tight">
+              Transforming the World with <br className="hidden md:block" />
+              <span className="gradient-text">Computer Vision</span> & <span className="text-white">AI</span>
             </h1>
           </motion.div>
 
@@ -70,7 +75,7 @@ const Hero = () => {
             </Link>
             <Link 
               to="/solutions" 
-              className="btn btn-outline text-white border-white hover:bg-white hover:text-secondary-900"
+              className="btn btn-outline border-white/30 text-white hover:bg-white/10 hover:border-white backdrop-blur-sm"
             >
               Explore Solutions
             </Link>

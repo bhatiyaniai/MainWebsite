@@ -9,7 +9,7 @@ const About = () => {
       <AboutHero />
       <WhyChooseUs />
       <Team />
-    </div>
+    </div> 
   );
 };
 
