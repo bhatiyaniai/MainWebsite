@@ -88,9 +88,10 @@ const Navbar = () => {
         <div className={classNames(
           "mx-auto max-w-7xl transition-all duration-300",
           open ? "rounded-3xl" : "rounded-full",
+          scrolled ? "shadow-md" : "shadow-sm",
           isDarkHero
-            ? "bg-white/10 dark:bg-secondary-950/20 backdrop-blur-md shadow-sm border border-white/20 dark:border-secondary-800/50"
-            : "bg-white/60 dark:bg-secondary-950/60 backdrop-blur-md shadow-sm border border-secondary-200/50 dark:border-secondary-800/50"
+            ? "bg-white/10 dark:bg-secondary-950/20 backdrop-blur-md border border-white/20 dark:border-secondary-800/50"
+            : "bg-white/60 dark:bg-secondary-950/60 backdrop-blur-md border border-secondary-200/50 dark:border-secondary-800/50"
         )}>
           <div className="container-custom">
             <div className="relative flex h-20 items-center justify-between">

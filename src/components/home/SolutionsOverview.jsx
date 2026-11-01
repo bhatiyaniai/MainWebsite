@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SectionTitle from '../common/SectionTitle';
-import { fadeInLeft, fadeInRight, fadeInUp } from '../../utils/animations';
+import { fadeInUp } from '../../utils/animations';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 const solutions = [

@@ -1,6 +1,3 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { fadeInUp, staggerContainer } from '../utils/animations';
 import SectionTitle from '../components/common/SectionTitle';
 
 const positions = [
@@ -98,6 +95,27 @@ const Careers = () => {
         </div>
 
         <div className="mb-16">
+          <h3 className="text-2xl font-bold mb-6 dark:text-white">Current Openings</h3>
+          <div className="space-y-4">
+            {positions.map((pos) => (
+              <div key={pos.id} className="bg-secondary-50 dark:bg-secondary-900 p-6 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                  <h4 className="text-xl font-bold text-secondary-900 dark:text-white">{pos.title}</h4>
+                  <p className="text-sm text-secondary-500 dark:text-secondary-400 mb-2">{pos.department} • {pos.location} • {pos.type}</p>
+                  <p className="text-secondary-600 dark:text-secondary-300">{pos.description}</p>
+                </div>
+                <a 
+                  href={`mailto:support@bhatiyaniai.com?subject=Application for ${encodeURIComponent(pos.title)}`}
+                  className="btn btn-outline whitespace-nowrap self-start md:self-center"
+                >
+                  Apply Now
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mb-16">
           <h3 className="text-2xl font-bold mb-6 dark:text-white">Benefits & Perks</h3>
           <div className="bg-primary-50 dark:bg-primary-900/20 rounded-xl p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -128,4 +146,4 @@ const Careers = () => {
   );
 };
 
-export default Careers; 
+export default Careers;

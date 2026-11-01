@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { fadeInUp, fadeInLeft, fadeInRight } from '../../utils/animations';
+import { fadeInLeft, fadeInRight } from '../../utils/animations';
 
 const SolutionsHero = () => {
   return (

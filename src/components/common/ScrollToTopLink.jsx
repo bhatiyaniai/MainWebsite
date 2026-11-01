@@ -12,7 +12,7 @@ const ScrollToTopLink = ({ children, to, className, ...props }) => {
         left: 0,
         behavior: 'instant'
       });
-    } catch (error) {
+    } catch {
       // Fallback for older browsers
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0; // For Safari

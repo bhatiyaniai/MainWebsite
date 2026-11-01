@@ -8,6 +8,12 @@
     <meta name="keywords" content="Computer Vision, Artificial Intelligence, AI Solutions, Industrial Automation, Vehicle Tracking, Machine Learning, Bhatiyani Astute Intelligence" />
     <meta name="author" content="Bhatiyani Astute Intelligence" />
     
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' data: blob:; connect-src 'self' https://api.emailjs.com; frame-src 'self' https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Bhatiyani Astute Intelligence" />
@@ -45,21 +51,34 @@
 
     <title>Bhatiyani Astute Intelligence - Computer Vision & AI Solutions</title>
 
-    <!-- GitHub Pages SPA redirect reader: restores the path encoded by 404.html -->
+    <!-- GitHub Pages SPA redirect reader: securely restores the path encoded by 404.html -->
     <script>
       (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) {
-            return s.replace(/~and~/g, '&');
-          });
-          window.history.replaceState(
-            null, null,
-            l.pathname.slice(0, -1) + decoded[0] +
-            (decoded[1] ? '?' + decoded[1] : '') +
-            l.hash
-          );
+        if (l.search) {
+          var targetPath = null;
+          var query = '';
+          if (l.search[1] === '/') {
+            var decoded = l.search.slice(1).split('&').map(function(s) {
+              return s.replace(/~and~/g, '&');
+            });
+            targetPath = decoded[0];
+            query = decoded[1] ? '?' + decoded[1] : '';
+          } else if (l.search.slice(1, 4) === 'p=/') {
+            var decoded = l.search.slice(3).split('&q=').map(function(s) {
+              return s.replace(/~and~/g, '&');
+            });
+            targetPath = decoded[0];
+            query = decoded[1] ? '?' + decoded[1] : '';
+          }
+          // Validate targetPath to ensure it is strictly a safe local relative path (prevent open redirect / protocol-relative attack)
+          if (targetPath && targetPath.charAt(0) === '/' && !targetPath.startsWith('//') && !targetPath.includes('\\') && !/^(javascript:|data:|vbscript:)/i.test(targetPath)) {
+            window.history.replaceState(
+              null, null,
+              l.pathname.slice(0, -1) + targetPath + query + l.hash
+            );
+          }
         }
-      }(window.location))
+      }(window.location));
     </script>
   </head>
   <body class="bg-white dark:bg-secondary-950">

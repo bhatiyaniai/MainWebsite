@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Hero from '../components/home/Hero';
 // import ProductsOverview from '../components/home/ProductsOverview';
 import SolutionsOverview from '../components/home/SolutionsOverview';

@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import adhipImg from '../assets/adhip.JPG';
+import adhipImg from '../assets/adhip-upright.JPG';
 import ChandrikaImg from '../assets/Chandrika.jpg';
 import KishanImg from '../assets/Kishan.jpg';
 

@@ -83,12 +83,12 @@ const Team = () => {
           <p className="text-secondary-600 dark:text-secondary-300 mb-8">
             Our team of 50+ experts includes PhDs and industry veterans from top universities and tech companies around the world.
           </p>
-          <a 
-            href="/contact/careers" 
+          <Link 
+            to="/contact/careers" 
             className="btn btn-outline"
           >
             Join Our Team
-          </a>
+          </Link>
         </div>
       </div>
     </section>

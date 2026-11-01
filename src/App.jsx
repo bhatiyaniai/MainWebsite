@@ -22,6 +22,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import ScrollToTop from './components/common/ScrollToTop';
 import LoadingScreen from './components/common/LoadingScreen';
 import TeamMemberDetail from './pages/TeamMemberDetail';
+import ErrorBoundary from './components/common/ErrorBoundary';
 
 function App() {
   // Show loading screen for 3.5 seconds, then hide
@@ -35,12 +36,13 @@ function App() {
   }, []);
 
   return (
-    <HelmetProvider>
-      <ThemeProvider>
-        {isLoading && <LoadingScreen />}
-        <Router>
-        <ScrollToTop />
-        <Routes>
+    <ErrorBoundary>
+      <HelmetProvider>
+        <ThemeProvider>
+          {isLoading && <LoadingScreen />}
+          <Router>
+          <ScrollToTop />
+          <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
@@ -165,6 +167,7 @@ function App() {
         </Router>
       </ThemeProvider>
     </HelmetProvider>
+  </ErrorBoundary>
   );
 }
 
